@@ -19,10 +19,10 @@ else
     source ~/.bashrc
 fi
 
-echo "=== Installing MessagePack tools ==="
-cargo install msgpack-cli
+# echo "=== Installing MessagePack tools ==="
+# cargo install msgpack-cli
 
-echo "=== Setting up ssh agent and key ==="
+#echo "=== Setting up ssh agent and key ==="
 #cp -r /workspace/.ssh ~/.
 #chmod og-rw ~/.ssh/id_rsa_cmgeyer*
 #eval "$(ssh-agent -s)"
