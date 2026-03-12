@@ -8,6 +8,7 @@ sudo snap install aws-cli --classic
 echo "=== Installing emacs, tmux, system dependencies for diffusion_policy ==="
 sudo apt-get update
 sudo apt-get -y install emacs tmux
+sudo apt-get -y install make
 #\
 #	libosmesa6-dev libgl1-mesa-glx libglfw3 patchelf unzip jq
 
