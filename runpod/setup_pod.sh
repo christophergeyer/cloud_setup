@@ -14,12 +14,6 @@ echo "=== Installing MessagePack tools ==="
 source ~/.bashrc
 cargo install msgpack-cli
 
-echo "=== Setting up ssh agent and key ==="
-cp -r /workspace/.ssh ~/.
-chmod og-rw ~/.ssh/id_rsa_cmgeyer*
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa_cmgeyer
-
 echo "=== Getting claude ==="
 curl -fsSL https://claude.ai/install.sh | bash
 
@@ -54,12 +48,10 @@ if ! grep -q 'alias bashrc' ~/.bashrc 2>/dev/null; then
     echo 'alias bashrc="source ~/.bashrc"' >> ~/.bashrc
 fi
 
-echo "=== Setup complete ==="
-echo "Run: source ~/.bashrc"
-echo ""
-echo "To train:"
-echo "  cd /workspace/diffusion_policy"
-echo "  source .venv/bin/activate"
-echo "  PYTHONPATH=. python train.py --config-dir=. --config-name=image_pusht_diffusion_policy_cnn.yaml training.device=cuda:0 logging.mode=disabled"
+if ! grep -q 'alias gh_christophergeyer' ~/.bashrc 2>/dev/null; then
+    echo >> ~/.bashrc
+    echo 'alias gh_christophergeyer="source ~/.ssh/christophergeyer.sh"' >> ~/.bashrc
+    echo 'alias gh_chris_treqs="source ~/.ssh/chris_treqs.sh"' >> ~/.bashrc
+fi
 
 exit
