@@ -70,5 +70,12 @@ if ! grep -q 'alias bashrc' ~/.bashrc 2>/dev/null; then
     echo 'alias bashrc="source ~/.bashrc"' >> ~/.bashrc
 fi
 
+if ! grep -q 'alias gh_christophergeyer' ~/.bashrc 2>/dev/null; then
+    echo >> ~/.bashrc
+    echo 'alias gh_christophergeyer="source ~/cloud_setup/aws/christophergeyer.sh"' >> ~/.bashrc
+    echo 'alias gh_chris_treqs="source ~/cloud_setup/aws/chris_treqs.sh"' >> ~/.bashrc
+fi
+
 echo "=== Setup complete ==="
 echo "Run: source ~/.bashrc"
+
