@@ -4,8 +4,8 @@ set -e
 echo "=== Installing emacs, tmux, system dependencies for diffusion_policy ==="
 echo "=== Installing system dependencies for diffusion_policy ==="
 apt-get update
-apt-get -y install emacs tmux \
-	libosmesa6-dev libgl1-mesa-glx libglfw3 patchelf unzip jq
+apt-get -y install emacs tmux unzip jq
+#	libosmesa6-dev libgl1-mesa-glx libglfw3 patchelf unzip jq
 
 echo "=== Installing cargo and rust ==="
 curl https://sh.rustup.rs -sSf | sh -s -- -y
