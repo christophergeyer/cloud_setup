@@ -79,3 +79,4 @@ fi
 echo "=== Setup complete ==="
 echo "Run: source ~/.bashrc"
 
+set +e
