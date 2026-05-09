@@ -7,8 +7,9 @@ sudo snap install aws-cli --classic
 
 echo "=== Installing emacs, tmux, system dependencies for diffusion_policy ==="
 sudo apt-get update
-sudo apt-get -y install emacs tmux
-sudo apt-get -y install make
+sudo apt-get -y install --no-install-recommends emacs tmux
+sudo apt-get -y install make gh
+
 #\
 #	libosmesa6-dev libgl1-mesa-glx libglfw3 patchelf unzip jq
 
@@ -72,8 +73,8 @@ fi
 
 if ! grep -q 'alias gh_christophergeyer' ~/.bashrc 2>/dev/null; then
     echo >> ~/.bashrc
-    echo 'alias gh_christophergeyer="source ~/cloud_setup/aws/christophergeyer.sh"' >> ~/.bashrc
-    echo 'alias gh_chris_treqs="source ~/cloud_setup/aws/chris_treqs.sh"' >> ~/.bashrc
+    echo 'alias gh_christophergeyer="source ~/.ssh/christophergeyer.sh"' >> ~/.bashrc
+    echo 'alias gh_chris_treqs="source ~/.ssh/chris_treqs.sh"' >> ~/.bashrc
 fi
 
 echo "=== Setup complete ==="
